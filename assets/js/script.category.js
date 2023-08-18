@@ -74,11 +74,11 @@ const categoriesName = document.getElementById("categoryNameInput").value;
 
 categoriesList.addCategory(categoriesName);
 
-
- console.log(categoriesList.categories);
+console.log(categoriesList.categories);
 
 // console.log("Categorias criadas");
 
+displayCategories();
 cleanFields()
 }
 
@@ -135,6 +135,15 @@ function findProduct(id) {
     console.log(product.name);
 }
 
+function displayCategories(){
+    let content = "";
+
+    categoriesList.categories.forEach((category)=> {
+        content += `<li>${category.name}<li/>`
+    });
+
+    document.getElementById("categoriesLists").innerHTML = content;
+}
 
 function cleanFields(){
     document.getElementById('categoryNameInput').value = '';
