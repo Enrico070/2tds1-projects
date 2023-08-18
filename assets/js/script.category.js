@@ -68,9 +68,17 @@ const productsList = new ProductService();
 
 function createCategory(){
 const categoriesName1 = "candies";
+const categoriesName2 = "shoes";
+const categoriesName3 = "books";
 
 
 categoriesList.addCategory(categoriesName1);
+categoriesList.addCategory(categoriesName2);
+categoriesList.addCategory(categoriesName3);
+
+// console.log(categoriesList.categories);
+
+console.log("Categorias criadas");
 
 
 }
@@ -84,14 +92,14 @@ function createProduct(){
 
     productsList.addProduct(productName, productPrice, productCategory);
 
-    console.log( productsList.products);
+    // console.log( productsList.products);
 }
 
 
 function findCategory(id) {
     const category = categoriesList.getCategoryById(id);
 
-    console.log(category.name);
+    //console.log(category.name);
 }
 
 
@@ -103,8 +111,8 @@ function editCategory(id, name) {
 }
 
 
-function deleteCategory(id, name) {
-    categoriesList.deleteCategory(id, name);
+function deleteCategory(id) {
+    categoriesList.deleteCategory(id);
 
     console.log(categoriesList.categories)
 }
