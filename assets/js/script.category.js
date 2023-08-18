@@ -28,6 +28,10 @@ class CategoryService{
         const category = new Category(id, name);
         this.categories.push(category);
     }
+
+    getCategoryById(id){
+        return this.categories.find((category) => category.id == id);
+    }
 }
 
 class ProductService{
@@ -51,11 +55,12 @@ const productsList = new ProductService();
 
 
 function createCategory(){
-const categoriesName = "candies";
+const categoriesName1 = "candies";
 
-categoriesList.addCategory(categoriesName);
 
-//console.log(categoriesList.categories);
+categoriesList.addCategory(categoriesName1);
+
+
 }
 
 
